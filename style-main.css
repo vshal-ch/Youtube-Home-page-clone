@@ -1,0 +1,169 @@
+.videos-container {
+  width: 100%;
+  height: calc(100vh - 60px - 55.5px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 1.1rem;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  row-gap: 2rem;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.thumbnail-container {
+  width: 100%;
+  display: grid;
+  position: relative;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.icons-container {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.icons-container svg {
+  width: 24px;
+  fill: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.watchlater,
+.add-to-queue {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.watchlater::after,
+.add-to-queue::after {
+  color: #fff;
+  content: "ADD TO QUEUE";
+  height: 24px;
+  position: absolute;
+  padding: 0 5px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: grid;
+  place-items: center;
+  white-space: nowrap;
+  right: 100%;
+  clip-path: inset(0 0 0 100%);
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: clip-path 0.2s ease;
+}
+
+.watchlater::after {
+  content: "WATCH LATER";
+}
+
+.watchlater:hover svg,
+.add-to-queue:hover svg {
+  border-radius: 0px;
+}
+
+.watchlater:hover::after,
+.add-to-queue:hover::after {
+  clip-path: inset(0 0 0 0);
+}
+
+.video-container:hover .icons-container {
+  display: flex;
+}
+
+.video-container:hover .menu-container{
+    visibility: visible;
+}
+
+.duration {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+.video-details {
+  display: grid;
+  grid-template-columns: 1.5fr 8fr 0.5fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 14px;
+}
+
+.channel-thumb-container {
+  grid-column: 1/2;
+  grid-row: 1/4;
+}
+
+.channel-thumb-container img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.video-title {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-size: 0.9rem;
+  height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.channel-name {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.channel-name:hover{
+    color:#333;
+}
+
+.stats {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.menu-container {
+  grid-column: 3/4;
+  grid-row: 1/4;
+  fill: #555;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.menu-container svg{
+    fill:#555;
+}
+
+.menu-container svg:hover{
+    fill:#333;
+}
